@@ -6,9 +6,19 @@ def create_project_hash
   #This just opens up a file and reds it into a local_variables
   html = File.read('fixtures/kickstarter.html')
   kickstarter = Nokogiri::HTML(html)
+  
+  projects = {}
   #added project variable
   project = kickstarter.css("li.project.grid_4").first
   binding.pry
+  
+  
+  #iterate through the projects
+  kickstarter.css(li.project.grid_4).each do |project|
+    projects[project] = {}
+  end
+  #return project hash
+  projects
   end
 create_project_hash
 
