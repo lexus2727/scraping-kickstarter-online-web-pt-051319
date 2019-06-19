@@ -6,6 +6,7 @@ def create_project_hash
   #This just opens up a file and reds it into a local_variables
   html = File.read('fixtures/kickstarter.html')
   kickstarter = Nokogiri::HTML(html)
+  project = 
   binding.pry
   end
 create_project_hash
